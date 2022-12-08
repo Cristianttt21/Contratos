@@ -62,7 +62,7 @@ public class CalculaSueldo {
 				case 2: {
 					System.out.println("La cantidad de empleados registrados es: " + empleado.size() + "\n\n");
 					for (int i = 0; i < empleado.size(); i++) {
-						System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " ---- " + empleado.get(i).getTipoempl() );
+						System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "+ "Tipo de empleado, asalariado es (1) y Por comision(2):  "+ empleado.get(i).getTipoempl() );
 
 					}
 				}

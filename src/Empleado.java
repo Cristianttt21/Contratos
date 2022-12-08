@@ -3,7 +3,7 @@ public class Empleado {
 
 	private String nombre;   //declara variables a utilizar localmente
 	private double Sueldo;
-	private int tipoempl;
+	private int tipoempl ;
 	private double comision;
 	
 	
@@ -11,6 +11,7 @@ public class Empleado {
 	public Empleado(String nombre, float Sueldo, int tipoempl) {
 		this.nombre = nombre;
 		this.setSueldo(Sueldo);
+		this.setTipoempl(tipoempl);
 	}
 
 	public String getNombre() {  //permite la captura del valor recibido en el llamado a la clase
