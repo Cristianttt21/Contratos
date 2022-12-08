@@ -10,8 +10,8 @@ public class CalculaSueldo {
 		/*
 		 * clase que permite almacenar datos en memoria de forma similar a los Arrays,
 		 * con la ventaja de que el numero de elementos que almacena, lo hace de forma
-		 * dinámica, es decir, que no es necesario declarar su tamaño como pasa con los
-		 * Arrays.
+		 * dinámica, es decir, que no es necesario declarar su tamaño como pasa con
+		 * los Arrays.
 		 */
 		// Declaracion de variables
 		String nomEmpl = "";
@@ -44,63 +44,63 @@ public class CalculaSueldo {
 				switch (Opcion) {
 
 				case 1: {
-				
-					System.out.println("Por favor ingrese el Nombre del empleado: " + contnom++ );
+					int tipoempl = 0;
+					System.out.println("Bienvenido, \n para comenzar necesitamos indiques si vas a registrar un empleado asalariado ( 1 )  o por comision ( 2 )");
+					do {
+						System.out.println("do while");
+						tipoempl = in.nextInt();
+					 }while ((tipoempl!=1) && (tipoempl != 2)); 
+					System.out.println("Por favor ingrese el Nombre del empleado: " + contnom++);
 					nomEmpl = in.nextLine();
 					nomEmpl = in.nextLine();
-					if (!DeclSalario) {
-						System.out.println("Por favor ingrese el salario del empleado: " + contsuel++);
+					System.out.println("Por favor ingrese el salario del empleado: " + contsuel++);
 						Sueldo = in.nextFloat();
-						DeclSalario = true;
-						;
-					} else {
-						Sueldo = (float) (Sueldo * 0.10 + Sueldo);
-					}
-
-					empleado.add(new Empleado(nomEmpl, Sueldo));
-
-					System.out.println(" ");
+					empleado.add(new Empleado(nomEmpl, Sueldo, tipoempl));
 				}
 					break;
 
-				case 2:
-				{
-					System.out.println("La cantidad de empleados registrados es: "+ empleado.size() + "\n\n");
+				case 2: {
+					System.out.println("La cantidad de empleados registrados es: " + empleado.size() + "\n\n");
 					for (int i = 0; i < empleado.size(); i++) {
-						System.out.println(
-								"Empleado: " + empleado.get(i).getNombre() + "  --- "  + " Salario $: " + String.format("%.2f",empleado.get(i).getSueldo()));
+						System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " ---- " + empleado.get(i).getTipoempl() );
 
 					}
 				}
 					break;
 
-				case 3:
-				{
+				case 3: {
 
 					for (int i = 0; i < empleado.size(); i++) {
-						
-								
-								if(Sueldo <= 5289934) {
-									System.out.println("Empleado: " + empleado.get(i).getNombre() +" \n\t--- " + " Salario $ : " + String.format("%.2f",empleado.get(i).getSueldo())
-									+" \n\t--- "+ " Descuento por Pension: $" + (empleado.get(i).getSueldo() * 0.04) +" \n\t--- "+" Descuento por Salud: $" +
-								   (empleado.get(i).getSueldo() * 0.04) +" \n--- "+ " Salario Neto (con descuentos): $" + String.format("%.2f",( empleado.get(i).getSueldo()
-								   - empleado.get(i).getSueldo() * 0.08)));
+
+						if (Sueldo <= 5289934) {
+							System.out.println("Empleado: " + empleado.get(i).getNombre() + " \n\t--- "
+									+ " Salario $ : " + String.format("%.2f", empleado.get(i).getSueldo()) + " \n\t--- "
+									+ " Descuento por Pension: $" + (empleado.get(i).getSueldo() * 0.04) + " \n\t--- "
+									+ " Descuento por Salud: $" + (empleado.get(i).getSueldo() * 0.04) + " \n--- "
+									+ " Salario Neto (con descuentos): $" + String.format("%.2f",
+											(empleado.get(i).getSueldo() - empleado.get(i).getSueldo() * 0.08)));
+						} else {
+							System.out.println("Empleado: " + empleado.get(i).getNombre() + " \n\t--- "
+									+ " Salario $ : " + String.format("%.2f", empleado.get(i).getSueldo()) + " \n\t--- "
+									+ " Descuento por pension Pension: $" + (empleado.get(i).getSueldo() * 0.05)
+									+ " \n\t--- " + " Descuento por Salud: $" + (empleado.get(i).getSueldo() * 0.05)
+									+ " \n\t--- " + " Retefuente: "
+									+ String.format("%.2f", (empleado.get(i).getSueldo() * 0.14)) + " \n--- "
+									+ " Salario Neto (con descuentos): $"
+									+ String.format("%.2f",
+											(empleado.get(i).getSueldo() - empleado.get(i).getSueldo() * 0.1
+													- (empleado.get(i).getSueldo() * 0.14))));
+
+						}
+
 					}
-								else {
-									System.out.println("Empleado: " + empleado.get(i).getNombre() +" \n\t--- "+ " Salario $ : " + String.format("%.2f",empleado.get(i).getSueldo())
-									+" \n\t--- " +" Descuento por pension Pension: $" + (empleado.get(i).getSueldo() * 0.05) +" \n\t--- "+" Descuento por Salud: $" +
-								   (empleado.get(i).getSueldo() * 0.05) +" \n\t--- " +" Retefuente: " + String.format("%.2f",(empleado.get(i).getSueldo() * 0.14)) +" \n--- "+ " Salario Neto (con descuentos): $" + 
-								   String.format("%.2f",( empleado.get(i).getSueldo() - empleado.get(i).getSueldo() * 0.1 - (empleado.get(i).getSueldo() * 0.14))) );
-							
-								}		 	
-				
-				}
 				}
 					break;
 
 				case 0: { // SALIR DE LA APLICACION
 					salir = true;
-					System.out.println("Salida del programa\n\nGracias por usar esta aplicacion:\n\nCreadores:\nMateo Castro\nCristian Paez\nRodrigo Zuniga");
+					System.out.println(
+							"Salida del programa\n\nGracias por usar esta aplicacion:\n\nCreadores:\nMateo Castro\nCristian Paez\nRodrigo Zuniga");
 					in.close();
 				}
 					break;

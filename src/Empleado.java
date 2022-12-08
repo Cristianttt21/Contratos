@@ -3,8 +3,10 @@ public class Empleado {
 
 	private String nombre;   //declara variables a utilizar localmente
 	private double Sueldo;
-
-	public Empleado(String nombre, float Sueldo) {
+	private int tipoempl;
+	
+	
+	public Empleado(String nombre, float Sueldo, int tipoempl) {
 		this.nombre = nombre;
 		this.setSueldo(Sueldo);
 	}
@@ -23,6 +25,14 @@ public class Empleado {
 
 	public void setSueldo(float sueldo) {
 		Sueldo = sueldo;
+	}
+
+	public int getTipoempl() {
+		return tipoempl;
+	}
+
+	public void setTipoempl(int tipoempl) {
+		this.tipoempl = tipoempl;
 	}
 	
 }
