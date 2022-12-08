@@ -4,6 +4,8 @@ public class Empleado {
 	private String nombre;   //declara variables a utilizar localmente
 	private double Sueldo;
 	private int tipoempl;
+	private double comision;
+	
 	
 	
 	public Empleado(String nombre, float Sueldo, int tipoempl) {
@@ -33,6 +35,14 @@ public class Empleado {
 
 	public void setTipoempl(int tipoempl) {
 		this.tipoempl = tipoempl;
+	}
+
+	public double getComision() {
+		return comision;
+	}
+
+	public void setComision(double comision) {
+		this.comision = comision;
 	}
 	
 }

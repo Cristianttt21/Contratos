@@ -16,7 +16,7 @@ public class CalculaSueldo {
 		// Declaracion de variables
 		String nomEmpl = "";
 		float Sueldo = 0;
-		int Opcion = 0, contnom = 1, contsuel = 1;
+		int Opcion = 0;
 		boolean salir = false;
 		// inicializacion metodo escanner
 		Scanner in = new Scanner(System.in); // Inicializamos scanner para leer numeros
@@ -31,7 +31,8 @@ public class CalculaSueldo {
 			System.out.println(" \n");
 			System.out.println(" 1. REGISTRAR EMPLEADO");
 			System.out.println(" 2. VERIFICAR LISTA DE EMPLEADOS ");
-			System.out.println(" 3. DESPRENDIBLE DE PAGOS ");
+			System.out.println(" 3. INTRODUCIR COMISIONES POR VENTA ");
+			System.out.println(" 4. DESPRENDIBLE DE PAGOS ");
 			System.out.println(" 0. SALIR DE LA APLICACION ");
 			System.out.println(" \n\n ");
 
@@ -44,15 +45,15 @@ public class CalculaSueldo {
 
 				case 1: {
 					int tipoempl = 0;
-					System.out.println("Bienvenido, \n para comenzar necesitamos indiques si vas a registrar un empleado asalariado ( 1 )  o por comision ( 2 )");
-					do {
-						tipoempl = in.nextInt();
-					 }while ((tipoempl!=1) && (tipoempl != 2)); 
-					System.out.println("Por favor ingrese el Nombre del empleado: " + contnom++);
+					System.out.println("Ingrese el Nombre del empleado: ");
 					nomEmpl = in.nextLine();
 					nomEmpl = in.nextLine();
-					System.out.println("Por favor ingrese el salario del empleado: " + contsuel++);
+					System.out.println("Ingrese Salario empleado: ");
 						Sueldo = in.nextFloat();
+					do {
+						System.out.println("Tipo empleado: asalariado ( 1 ) , por comision ( 2 )");
+						tipoempl = in.nextInt();
+					 }while ((tipoempl!=1) && (tipoempl != 2));
 					empleado.add(new Empleado(nomEmpl, Sueldo, tipoempl));
 				}
 					break;
@@ -66,7 +67,12 @@ public class CalculaSueldo {
 				}
 					break;
 
+					
 				case 3: {
+					System.out.println("Cristian");
+				}
+				break;
+				case 4: {
 
 					for (int i = 0; i < empleado.size(); i++) {
 
@@ -107,7 +113,7 @@ public class CalculaSueldo {
 					break;
 				}
 			} catch (InputMismatchException e) {
-				System.out.println("Debes introducir una cantidad numerica referente al salario");
+				System.out.println("El valor introducido no es valido, Intente nuevamente");
 				in.next();
 			}
 			in.ioException();
