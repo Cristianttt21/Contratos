@@ -55,7 +55,7 @@ public class CalculaSueldo {
 						System.out.println("Tipo empleado: asalariado ( 1 ) , por comision ( 2 )");
 						tipoempl = in.nextInt();
 					 }while ((tipoempl!=1) && (tipoempl != 2));
-					empleado.add(new Empleado(nomEmpl, Sueldo, tipoempl));
+					empleado.add(new Empleado(nomEmpl, Sueldo, tipoempl, comision));
 				}
 					break;
 
