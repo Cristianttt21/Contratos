@@ -27,13 +27,14 @@ public class CalculaSueldo {
 
 			System.out.println(" \n\n **************************************** ");
 			System.out.println(" ***************** MENU ***************** ");
-			System.out.println(" **************************************** \n\nDigite la opcion deseada:");
+			System.out.println(" **************************************** \n\n\tDigite la opcion deseada:");
 			System.out.println(" \n");
-			System.out.println(" 1. REGISTRAR EMPLEADO");
-			System.out.println(" 2. VERIFICAR LISTA DE EMPLEADOS ");
+			System.out.println(" 1. MODULO DE REGISTRO DE EMPLEADOS");
+			System.out.println(" 2. VERIFICAR LA LISTA DE EMPLEADOS ");
 			System.out.println(" 3. INTRODUCIR COMISIONES POR VENTA ");
-			System.out.println(" 4. DESPRENDIBLE DE PAGOS ");
-			System.out.println(" 0. SALIR DE LA APLICACION ");
+			System.out.println(" 4. ARCHIVOS DE REPORTES SALARIALES ");
+			System.out.println(" 5. GENERAR  DESPRENDIBLES DE PAGOS ");
+			System.out.println(" 0. \tSALIR DE LA APLICACION ");
 			System.out.println(" \n\n ");
 
 			try { // permite capturar cuando el valor ingresado no corresponde al menu o a un
@@ -72,7 +73,7 @@ public class CalculaSueldo {
 					System.out.println("Cristian");
 				}
 				break;
-				case 4: {
+				case 5: {
 
 					for (int i = 0; i < empleado.size(); i++) {
 
