@@ -6,6 +6,9 @@ public class CalculaSueldo {
 //inicializamos la clase main
 	public static void main(String[] args) {
 
+		Archivos Arch; // Constructor de clase, se encarga de crear el objeto que apunta a la clase Bin que se encarga de validacion de los Binarios
+		Arch = new Archivos();
+		
 		List<Empleado> empleado = new ArrayList<>();
 		/*
 		 * clase que permite almacenar datos en memoria de forma similar a los Arrays,
@@ -85,6 +88,10 @@ public class CalculaSueldo {
 					System.out.println("El saldo final es " + cantventfin);
 				}
 				break;
+				case 4: {
+					-- Archivos();
+					break;
+				}
 				case 5: {
 
 					for (int i = 0; i < empleado.size(); i++) {
