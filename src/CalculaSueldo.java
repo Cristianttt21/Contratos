@@ -18,7 +18,6 @@ public class CalculaSueldo {
 		float Sueldo = 0;
 		int Opcion = 0, contnom = 1, contsuel = 1;
 		boolean salir = false;
-		boolean DeclSalario = false;
 		// inicializacion metodo escanner
 		Scanner in = new Scanner(System.in); // Inicializamos scanner para leer numeros
 
@@ -47,7 +46,6 @@ public class CalculaSueldo {
 					int tipoempl = 0;
 					System.out.println("Bienvenido, \n para comenzar necesitamos indiques si vas a registrar un empleado asalariado ( 1 )  o por comision ( 2 )");
 					do {
-						System.out.println("do while");
 						tipoempl = in.nextInt();
 					 }while ((tipoempl!=1) && (tipoempl != 2)); 
 					System.out.println("Por favor ingrese el Nombre del empleado: " + contnom++);
