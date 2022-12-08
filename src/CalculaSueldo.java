@@ -15,7 +15,7 @@ public class CalculaSueldo {
 		 */
 		// Declaracion de variables
 		String nomEmpl = "";
-		float Sueldo = 0, cantvent, porvent, cantventfin = 0;
+		float Sueldo = 0, cantvent, porvent, cantventfin = 0, comision = 0;
 		int Opcion = 0, contvent = 0, ventas = 1;
 		boolean salir = false;
 		// inicializacion metodo escanner
@@ -78,7 +78,7 @@ public class CalculaSueldo {
 						System.out.println("Por favor digite la cantidad de la venta " + ventas ++);
 						cantvent = in.nextFloat();
 						porvent = (float) (cantvent * 0.20);
-						cantventfin += porvent;
+						comision += porvent;
 						contvent--;
 						
 					}

@@ -8,7 +8,7 @@ public class Empleado {
 	
 	
 	
-	public Empleado(String nombre, float Sueldo, int tipoempl) {
+	public Empleado(String nombre, float Sueldo, int tipoempl, double comision) {
 		this.nombre = nombre;
 		this.setSueldo(Sueldo);
 		this.setTipoempl(tipoempl);
