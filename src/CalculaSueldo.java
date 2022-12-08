@@ -15,8 +15,8 @@ public class CalculaSueldo {
 		 */
 		// Declaracion de variables
 		String nomEmpl = "";
-		float Sueldo = 0;
-		int Opcion = 0;
+		float Sueldo = 0, cantvent, porvent, cantventfin = 0;
+		int Opcion = 0, contvent = 0, ventas = 1;
 		boolean salir = false;
 		// inicializacion metodo escanner
 		Scanner in = new Scanner(System.in); // Inicializamos scanner para leer numeros
@@ -71,6 +71,18 @@ public class CalculaSueldo {
 					
 				case 3: {
 					System.out.println("Cristian");
+					System.out.println("Cristian");
+					System.out.println("Por favor digite la cantidad de ventas");
+					contvent = in.nextInt();
+					while (contvent >0) {
+						System.out.println("Por favor digite la cantidad de la venta " + ventas ++);
+						cantvent = in.nextFloat();
+						porvent = (float) (cantvent * 0.20);
+						cantventfin += porvent;
+						contvent--;
+						
+					}
+					System.out.println("El saldo final es " + cantventfin);
 				}
 				break;
 				case 5: {
