@@ -65,10 +65,10 @@ public class CalculaSueldo {
 				case 2: {
 					System.out.println("La cantidad de empleados registrados es: " + empleado.size() + "\n\n");
 					for (int i = 0; i < empleado.size(); i++) {
-						if (tipoempl == 1) { 
+						if (empleado.get(i).getTipoempl() == 1) { 
 							System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- "+ "Empleado Asalariado"+ " --- ");
 						}
-						else if (tipoempl == 2) {
+						else if (empleado.get(i).getTipoempl() == 2) {
 							System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- " + " Empleado Comisionado "+" --- " );
 							
 						}
@@ -82,9 +82,9 @@ public class CalculaSueldo {
 				case 3: {
 					System.out.println("La lista de emplados es:\n");
 					for (int i = 0; i < empleado.size(); i++) {
-						if(tipoempl == 1) {
+						if(empleado.get(i).getTipoempl() == 1) {
 						System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "+ "Empleado Asalariado  " );
-						} else if  (tipoempl == 2) {
+						} else if  (empleado.get(i).getTipoempl() == 2) {
 							System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "+ "Empleado Comisionado " );
 						}  
 						}
