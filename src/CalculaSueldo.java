@@ -66,16 +66,22 @@ public class CalculaSueldo {
 				case 2: {
 					System.out.println("La cantidad de empleados registrados es: " + empleado.size() + "\n\n");
 					for (int i = 0; i < empleado.size(); i++) {
-						if (empleado.get(i).getTipoempl() == 1) {
-							System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: "
-									+ String.format("%.2f", empleado.get(i).getSueldo()) + " --- "
-									+ "Empleado Asalariado" + " --- ");
-						} else if (empleado.get(i).getTipoempl() == 2) {
-							System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: "
-									+ String.format("%.2f", empleado.get(i).getSueldo()) + " --- "
-									+ " Empleado Comisionado " + " --- ");
-
+						if (empleado.get(i).getTipoempl() == 1) { 
+							System.out.println("Empleado: " + empleado.get(i).getNombre()
+									+ " \n\t --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- "+ "Empleado Asalariado"+ " --- ");
 						}
+						else if (empleado.get(i).getComision() == 0   ) {
+							System.out.println("Empleado: " + empleado.get(i).getNombre() + "\n\t  --- " 
+						+ " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- " + " Empleado Comisionado "+" --- "+ "\n\t No tiene comision, por favor digite en la opcion 3"  );
+							
+						}
+						
+						else if (empleado.get(i).getTipoempl() == 2   ) {
+							System.out.println("Empleado: " + empleado.get(i).getNombre() + "\n\t  --- " 
+						+ " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- " + " Empleado Comisionado "+" --- "+ "\n\t Comision es: " + empleado.get(i).getComision() );
+							
+						}
+						
 
 					}
 				}
