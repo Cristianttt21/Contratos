@@ -25,8 +25,21 @@ public class Archivos {
 	}
 
 	public void leer() {
-		// TODO Auto-generated method stub
-		System.out.println("leer archivo plano");
+		FileReader fr = null;
+		BufferedReader br = null;
+		
+		System.out.println("lectura del archivo");
+		try {
+			fr = new FileReader ("salarios.txt");
+			br = new BufferedReader (fr);
+			
+			//lectura
+			String linea;
+			while((linea = br.readLine()) != null);
+			System.out.println(linea);
+		} catch (Exception e) {
+			System.out.println("Error");
+		}
 	}
 	
 }
