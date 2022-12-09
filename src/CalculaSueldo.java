@@ -18,8 +18,8 @@ public class CalculaSueldo {
 		 * Arrays.
 		 */
 		// Declaracion de variables
-		String nomEmpl = "", nomCom = "";
-		float Sueldo = 0, cantvent, porvent, cantventfin = 0, comision = 0;
+		String nomEmpl = "";
+		float Sueldo = 0, cantvent, porvent, comision = 0;
 		int Opcion = 0, contvent = 0, posicion = 0, numempl = 1, posicion2 = 0, tipoempl = 0;
 		boolean salir = false;
 		// inicializacion metodo escanner
