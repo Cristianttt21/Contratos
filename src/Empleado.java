@@ -5,13 +5,15 @@ public class Empleado {
 	private double Sueldo;
 	private int tipoempl ;
 	private double comision;
+	private int Id;
 	
 	
 	
-	public Empleado(String nombre, float Sueldo, int tipoempl, double comision) {
+	public Empleado(int Id, String nombre, float Sueldo, int tipoempl, double comision) {
 		this.nombre = nombre;
 		this.setSueldo(Sueldo);
 		this.setTipoempl(tipoempl);
+		this.setId(Id);
 	}
 
 	public String getNombre() {  //permite la captura del valor recibido en el llamado a la clase
@@ -44,6 +46,14 @@ public class Empleado {
 
 	public void setComision(double comision) {
 		this.comision = comision;
+	}
+	
+	public int getId () {
+		return Id;
+	}
+
+	public void setId(int Id) {
+		this.Id = Id;
 	}
 	
 }
