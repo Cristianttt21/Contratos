@@ -3,13 +3,20 @@ import java.util.*;
 
 public class Archivos {
 
-	public void escribir (List<Empleado> empleado) {
+public void escribir (List<Empleado> empleado) {
 		
 		try {
 			FileWriter archivo = new FileWriter ("salarios.txt", true);
 			try(BufferedWriter datos = new BufferedWriter (archivo)){
 				for (int i = 0; i < empleado.size(); i++) {
-					datos.write(empleado.get(i).getNombre().toString() + "\t" + String.format("%.2f", empleado.get(i).getSueldo()) + "\t" + empleado.get(i).getTipoempl() + "\t" + empleado.get(i).getComision() +"\n");
+					datos.write ("Empleado: " + empleado.get(i).getNombre() + " \n\t--- "
+							+ " Tipo de empleado: $"	+ empleado.get(i).getTipoempl() + " \n--- "
+							+ " Salario $ : " + String.format("%.2f", empleado.get(i).getSueldo()) + " \n\t--- "
+							+ " Descuento por Pension: $" + (empleado.get(i).getSueldo() * 0.04) + " \n\t--- "
+							+ " Descuento por Salud: $" + (empleado.get(i).getSueldo() * 0.04) + " \n--- "
+							+ " Comisiones Obtenidas: $"  + "\t" + empleado.get(i).getComision() + " \n--- "
+							+ " Salario Neto (con Novedades): $" + String.format("%.2f",
+									(empleado.get(i).getSueldo() - empleado.get(i).getSueldo() * 0.08) + empleado.get(i).getComision() ) +"\n");
 				}
 				System.out.println("Su archivo salarios.txt se genero correctamente en: " + System.getProperty("user.dir") + "\\" );	
 				datos.close();
