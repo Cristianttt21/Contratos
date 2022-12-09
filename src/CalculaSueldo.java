@@ -68,17 +68,17 @@ public class CalculaSueldo {
 					for (int i = 0; i < empleado.size(); i++) {
 						if (empleado.get(i).getTipoempl() == 1) { 
 							System.out.println("Empleado: " + empleado.get(i).getNombre()
-									+ " \n\t --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- "+ "Empleado Asalariado"+ " --- ");
+									+ " \n\t --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- "+ " Asalariado "+ " --- ");
 						}
 						else if (empleado.get(i).getComision() == 0   ) {
 							System.out.println("Empleado: " + empleado.get(i).getNombre() + "\n\t  --- " 
-						+ " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- " + " Empleado Comisionado "+" --- "+ "\n\t No tiene comision, por favor digite en la opcion 3"  );
+						+ " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- " + " Comisionista "+" --- "+ "\n\t No registra comisiones\n\tPuede digitarlas en la opcion 3"  );
 							
 						}
 						
 						else if (empleado.get(i).getTipoempl() == 2   ) {
-							System.out.println("Empleado: " + empleado.get(i).getNombre() + "\n\t  --- " 
-						+ " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- " + " Empleado Comisionado "+" --- "+ "\n\t Comision es: " + empleado.get(i).getComision() );
+							System.out.println("Empleado: " + empleado.get(i).getNombre() + "\n\t --- " 
+						+ " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + "\n\t --- " + " Empleado Comisionado "+"\n\t --- "+ "Comision es: " + empleado.get(i).getComision() );
 							
 						}
 						
@@ -114,7 +114,7 @@ public class CalculaSueldo {
 						contvent = in.nextInt();
 						int ventas = 1;
 						while (contvent > 0) {
-							System.out.println("Por favor digite la cantidad de la venta " + ventas++);
+							System.out.println("Por favor digite el valor de la venta " + ventas++);
 							cantvent = in.nextFloat();
 							porvent = (float) (cantvent * 0.20);
 							comision += porvent;
@@ -125,15 +125,15 @@ public class CalculaSueldo {
 						for (int i = 0; i < empleado.size(); i++) {
 
 							if (empleado.get(i).getTipoempl() == 1) {
-								System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: "
+								System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: \t"
 										+ empleado.get(i).getNombre() + "  --- " + " Salario $: "
 										+ String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "
-										+ "Empleado Asalariado  ");
+										+ "Asalariado  ");
 							} else if (empleado.get(i).getTipoempl() == 2) {
 								System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: "
 										+ empleado.get(i).getNombre() + "  --- " + " Salario $: "
 										+ String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "
-										+ "Empleado Comisionado. " + "La comision es de"
+										+ "Comisionista. " + "La comision es de "
 										+ String.format("%.2f", empleado.get(i).getComision()));
 							}
 						}
