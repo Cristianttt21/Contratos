@@ -136,8 +136,10 @@ public class CalculaSueldo {
 					}
 				}
 					break;
-				case 4:
+				case 4: {
+					 Arch.escribir(empleado);
 					break;
+				}
 
 				case 5: {
 

@@ -1,0 +1,5 @@
+Rodrigo	15000000,00	1	
+Mateo	2000000,00	2	
+cristian	1500000,00	2	
+Rodrigo	1500000,00	2	
+Rodtrigo	200000,00	2	500000.0
