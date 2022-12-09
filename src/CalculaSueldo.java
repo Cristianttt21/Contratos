@@ -73,16 +73,16 @@ public class CalculaSueldo {
 
 					
 				case 3: {
-					System.out.println("La lista de emplado es\n");
+					System.out.println("La lista de emplados es:\n");
 					for (int i = 0; i < empleado.size(); i++) {
 						System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "+ "Tipo de empleado, asalariado es (1) y Por comision():  "+ empleado.get(i).getTipoempl() );
 					}
-					System.out.println("Seleccione el numero del empleado que desea agregarle comision");
+					System.out.println("\nSeleccione el numero del empleado que desea agregarle comision");
 					posicion = in.nextInt();
 					posicion2 = posicion - 1;
-					System.out.println("Selecciono el empleado: ");
+					System.out.println("Selecciono el empleado: \n");
 					System.out.println(empleado.get(posicion2).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(posicion2).getSueldo()) + " ---- "+ "Tipo de empleado, asalariado es (1) y Por comision(2):  "+ empleado.get(posicion2).getTipoempl() );
-					System.out.println("Por favor digite la cantidad de ventas");
+					System.out.println("\nPor favor digite la cantidad de ventas");
 					contvent = in.nextInt();
 					while (contvent >0) {
 						System.out.println("Por favor digite la cantidad de la venta " + ventas ++);
