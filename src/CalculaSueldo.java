@@ -68,7 +68,7 @@ public class CalculaSueldo {
 						if (tipoempl == 1) { 
 							System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- "+ "Empleado Asalariado"+ " --- ");
 						}
-						else {
+						else if (tipoempl == 2) {
 							System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- " + " Empleado Comisionado "+" --- " );
 							
 						}
@@ -94,9 +94,7 @@ public class CalculaSueldo {
 					posicion = in.nextInt();
 					posicion2 = posicion - 1;
 					System.out.println("Selecciono el empleado: \n");
-					if(tipoempl ==1 ) {
 					System.out.println(empleado.get(posicion2).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(posicion2).getSueldo()) + " ---- "+ "Tipo asalariado  "+ empleado.get(posicion2).getTipoempl() );
-					}
 					System.out.println("\nPor favor digite la cantidad de ventas");
 					contvent = in.nextInt();
 					while (contvent >0) {
