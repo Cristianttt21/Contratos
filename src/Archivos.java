@@ -23,5 +23,10 @@ public class Archivos {
 		
 		
 	}
+
+	public void leer() {
+		// TODO Auto-generated method stub
+		System.out.println("leer archivo plano");
+	}
 	
 }

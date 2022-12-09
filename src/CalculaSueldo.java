@@ -148,33 +148,9 @@ public class CalculaSueldo {
 				}
 
 				case 5: {
-
-					for (int i = 0; i < empleado.size(); i++) {
-
-						if (Sueldo <= 5289934) {
-							System.out.println("Empleado: " + empleado.get(i).getNombre() + " \n\t--- "
-									+ " Salario $ : " + String.format("%.2f", empleado.get(i).getSueldo()) + " \n\t--- "
-									+ " Descuento por Pension: $" + (empleado.get(i).getSueldo() * 0.04) + " \n\t--- "
-									+ " Descuento por Salud: $" + (empleado.get(i).getSueldo() * 0.04) + " \n--- "
-									+ " Salario Neto (con descuentos): $" + String.format("%.2f",
-											(empleado.get(i).getSueldo() - empleado.get(i).getSueldo() * 0.08)));
-						} else {
-							System.out.println("Empleado: " + empleado.get(i).getNombre() + " \n\t--- "
-									+ " Salario $ : " + String.format("%.2f", empleado.get(i).getSueldo()) + " \n\t--- "
-									+ " Descuento por pension Pension: $" + (empleado.get(i).getSueldo() * 0.05)
-									+ " \n\t--- " + " Descuento por Salud: $" + (empleado.get(i).getSueldo() * 0.05)
-									+ " \n\t--- " + " Retefuente: "
-									+ String.format("%.2f", (empleado.get(i).getSueldo() * 0.14)) + " \n--- "
-									+ " Salario Neto (con descuentos): $"
-									+ String.format("%.2f",
-											(empleado.get(i).getSueldo() - empleado.get(i).getSueldo() * 0.1
-													- (empleado.get(i).getSueldo() * 0.14))));
-
-						}
-
-					}
-				}
+					 Arch.leer();
 					break;
+				}
 
 				case 0: { // SALIR DE LA APLICACION
 					salir = true;
