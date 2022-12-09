@@ -6,20 +6,21 @@ public class CalculaSueldo {
 //inicializamos la clase main
 	public static void main(String[] args) {
 
-		Archivos Arch; // Constructor de clase, se encarga de crear el objeto que apunta a la clase Bin que se encarga de validacion de los Binarios
+		Archivos Arch; // Constructor de clase, se encarga de crear el objeto que apunta a la clase Bin
+						// que se encarga de validacion de los Binarios
 		Arch = new Archivos();
-		
+
 		List<Empleado> empleado = new ArrayList<>();
 		/*
 		 * clase que permite almacenar datos en memoria de forma similar a los Arrays,
 		 * con la ventaja de que el numero de elementos que almacena, lo hace de forma
-		 * dinámica, es decir, que no es necesario declarar su tamaño como pasa con
-		 * los Arrays.
+		 * dinámica, es decir, que no es necesario declarar su tamaño como pasa con los
+		 * Arrays.
 		 */
 		// Declaracion de variables
 		String nomEmpl = "", nomCom = "";
 		float Sueldo = 0, cantvent, porvent, cantventfin = 0, comision = 0;
-		int Opcion = 0, contvent = 0, ventas = 1, posicion = 0, numempl = 1, posicion2 = 0, tipoempl=0;
+		int Opcion = 0, contvent = 0, posicion = 0, numempl = 1, posicion2 = 0, tipoempl = 0;
 		boolean salir = false;
 		// inicializacion metodo escanner
 		Scanner in = new Scanner(System.in); // Inicializamos scanner para leer numeros
@@ -48,73 +49,96 @@ public class CalculaSueldo {
 				switch (Opcion) {
 
 				case 1: {
-					
-					System.out.println("Ingrese el Nombre del empleado: " + numempl ++);
+
+					System.out.println("Ingrese el Nombre del empleado: " + numempl++);
 					nomEmpl = in.nextLine();
 					nomEmpl = in.nextLine();
 					System.out.println("Ingrese Salario empleado: ");
-						Sueldo = in.nextFloat();
+					Sueldo = in.nextFloat();
 					do {
 						System.out.println("Tipo empleado: asalariado ( 1 ) , por comision ( 2 )");
 						tipoempl = in.nextInt();
-					 }while ((tipoempl!=1) && (tipoempl != 2));
-					empleado.add(new Empleado(numempl-1, nomEmpl, Sueldo, tipoempl, comision));
+					} while ((tipoempl != 1) && (tipoempl != 2));
+					empleado.add(new Empleado(numempl - 1, nomEmpl, Sueldo, tipoempl, comision));
 				}
 					break;
 
 				case 2: {
 					System.out.println("La cantidad de empleados registrados es: " + empleado.size() + "\n\n");
 					for (int i = 0; i < empleado.size(); i++) {
-						if (empleado.get(i).getTipoempl() == 1) { 
-							System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- "+ "Empleado Asalariado"+ " --- ");
+						if (empleado.get(i).getTipoempl() == 1) {
+							System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: "
+									+ String.format("%.2f", empleado.get(i).getSueldo()) + " --- "
+									+ "Empleado Asalariado" + " --- ");
+						} else if (empleado.get(i).getTipoempl() == 2) {
+							System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: "
+									+ String.format("%.2f", empleado.get(i).getSueldo()) + " --- "
+									+ " Empleado Comisionado " + " --- ");
+
 						}
-						else if (empleado.get(i).getTipoempl() == 2) {
-							System.out.println("Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " --- " + " Empleado Comisionado "+" --- " );
-							
-						}
-						
 
 					}
 				}
 					break;
 
-					
 				case 3: {
 					System.out.println("La lista de emplados es:\n");
 					for (int i = 0; i < empleado.size(); i++) {
-						if(empleado.get(i).getTipoempl() == 1) {
-						System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "+ "Empleado Asalariado  " );
-						} else if  (empleado.get(i).getTipoempl() == 2) {
-							System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "+ "Empleado Comisionado " );
-						}  
+						if (empleado.get(i).getTipoempl() == 1) {
+							System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: "
+									+ empleado.get(i).getNombre() + "  --- " + " Salario $: "
+									+ String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "
+									+ "Empleado Asalariado  ");
+						} else if (empleado.get(i).getTipoempl() == 2) {
+							System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: "
+									+ empleado.get(i).getNombre() + "  --- " + " Salario $: "
+									+ String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "
+									+ "Empleado Comisionado ");
 						}
-					
-					
+					}
 					System.out.println("\nSeleccione el numero del empleado que desea agregarle comision");
 					posicion = in.nextInt();
 					posicion2 = posicion - 1;
-					System.out.println("Selecciono el empleado: \n");
-					System.out.println(empleado.get(posicion2).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(posicion2).getSueldo()) + " ---- "+ "Tipo asalariado  "+ empleado.get(posicion2).getTipoempl() );
-					System.out.println("\nPor favor digite la cantidad de ventas");
-					contvent = in.nextInt();
-					while (contvent >0) {
-						System.out.println("Por favor digite la cantidad de la venta " + ventas ++);
-						cantvent = in.nextFloat();
-						porvent = (float) (cantvent * 0.20);
-						comision += porvent;
-						contvent--;
-					}
-					System.out.println("La comision es de " + comision);
-					empleado.get(posicion2).setComision(comision);
-					for (int i = 0; i < empleado.size(); i++) {
-						
-						System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "+ "Empleado Comisionado   "+ empleado.get(i).getTipoempl() + "La comision ganada en ventas es: " + empleado.get(i).getComision());
+					if (empleado.get(posicion2).getTipoempl() == 2) {
+						System.out.println("Selecciono el empleado: \n");
+						System.out.println(empleado.get(posicion2).getNombre() + "  --- " + " Salario $: "
+								+ String.format("%.2f", empleado.get(posicion2).getSueldo()) + " ---- "
+								+ "Tipo Comisionado  ");
+						System.out.println("\nPor favor digite la cantidad de ventas");
+						contvent = in.nextInt();
+						int ventas = 1;
+						while (contvent > 0) {
+							System.out.println("Por favor digite la cantidad de la venta " + ventas++);
+							cantvent = in.nextFloat();
+							porvent = (float) (cantvent * 0.20);
+							comision += porvent;
+							contvent--;
+						}
+						System.out.println("La comision es de " + String.format("%.2f", comision));
+						empleado.get(posicion2).setComision(comision);
+						for (int i = 0; i < empleado.size(); i++) {
+
+							if (empleado.get(i).getTipoempl() == 1) {
+								System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: "
+										+ empleado.get(i).getNombre() + "  --- " + " Salario $: "
+										+ String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "
+										+ "Empleado Asalariado  ");
+							} else if (empleado.get(i).getTipoempl() == 2) {
+								System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: "
+										+ empleado.get(i).getNombre() + "  --- " + " Salario $: "
+										+ String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "
+										+ "Empleado Comisionado. " + "La comision es de"
+										+ String.format("%.2f", empleado.get(i).getComision()));
+							}
+						}
+					} else {
+						System.out.println("Este usuario es asalariado, por favor, seleccione uno de comision");
 					}
 				}
-				break;
-				case 4: 
 					break;
-				
+				case 4:
+					break;
+
 				case 5: {
 
 					for (int i = 0; i < empleado.size(); i++) {
