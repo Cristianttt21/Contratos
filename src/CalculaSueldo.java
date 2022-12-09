@@ -75,7 +75,7 @@ public class CalculaSueldo {
 				case 3: {
 					System.out.println("La lista de emplado es\n");
 					for (int i = 0; i < empleado.size(); i++) {
-						System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "+ "Tipo de empleado, asalariado es (1) y Por comision(2):  "+ empleado.get(i).getTipoempl() );
+						System.out.println("(" + empleado.get(i).getId() + ")" + "Empleado: " + empleado.get(i).getNombre() + "  --- " + " Salario $: " + String.format("%.2f", empleado.get(i).getSueldo()) + " ---- "+ "Tipo de empleado, asalariado es (1) y Por comision():  "+ empleado.get(i).getTipoempl() );
 					}
 					System.out.println("Seleccione el numero del empleado que desea agregarle comision");
 					posicion = in.nextInt();
