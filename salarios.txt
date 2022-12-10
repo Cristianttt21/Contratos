@@ -1,1 +1,21 @@
-
+Empleado: Rodrigo 
+	---  Tipo de empleado: 1 
+	---  Salario $ : 1500000,00 
+	---  Descuento por Pension: $60000.0 
+	---  Descuento por Salud: $60000.0 
+\t---  Comisiones Obtenidas: $	0.0 
+	---  Salario Neto (con Novedades): $1380000,00
+Empleado: Exmechas 
+	---  Tipo de empleado: 2 
+	---  Salario $ : 1000000,00 
+	---  Descuento por Pension: $40000.0 
+	---  Descuento por Salud: $40000.0 
+\t---  Comisiones Obtenidas: $	3000000.0 
+	---  Salario Neto (con Novedades): $3920000,00
+Empleado: El cachetes 
+	---  Tipo de empleado: 2 
+	---  Salario $ : 1000000,00 
+	---  Descuento por Pension: $40000.0 
+	---  Descuento por Salud: $40000.0 
+\t---  Comisiones Obtenidas: $	1.3E7 
+	---  Salario Neto (con Novedades): $13920000,00
