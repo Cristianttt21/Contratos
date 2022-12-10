@@ -10,7 +10,7 @@ public void escribir (List<Empleado> empleado) {
 			try(BufferedWriter datos = new BufferedWriter (archivo)){
 				for (int i = 0; i < empleado.size(); i++) {
 					datos.write ("Empleado: " + empleado.get(i).getNombre() + " \n\t--- "
-							+ " Tipo de empleado: $"	+ empleado.get(i).getTipoempl() + " \n--- "
+							+ " Tipo de empleado: "	+ empleado.get(i).getTipoempl() + " \n--- "
 							+ " Salario $ : " + String.format("%.2f", empleado.get(i).getSueldo()) + " \n\t--- "
 							+ " Descuento por Pension: $" + (empleado.get(i).getSueldo() * 0.04) + " \n\t--- "
 							+ " Descuento por Salud: $" + (empleado.get(i).getSueldo() * 0.04) + " \n--- "
@@ -32,21 +32,26 @@ public void escribir (List<Empleado> empleado) {
 	}
 
 	public void leer() {
-		FileReader fr = null;
-		BufferedReader br = null;
+		 BufferedReader leer = null;
+		  try {
+		   String texto;
+		   leer = new BufferedReader(new FileReader("salarios.txt"));
+		while ((texto = leer.readLine()) != null) {
+
+		    System.out.println(texto);
+		   }
+
+		  } catch (IOException e) {
+			  System.out.println("Archivo no encontrado, debe crear primero el archivo");
+		  } finally {
+
+		   try {
+		    if (leer != null)
+		    	leer.close();
+		   } catch (IOException ex) {
+		    ex.printStackTrace();
+		   }
+		  }
+		 }
 		
-		System.out.println("lectura del archivo");
-		try {
-			fr = new FileReader ("salarios.txt");
-			br = new BufferedReader (fr);
-			
-			//lectura
-			String linea;
-			while((linea = br.readLine()) != null);
-			System.out.println(linea);
-		} catch (Exception e) {
-			System.out.println("Error");
-		}
 	}
-	
-}
