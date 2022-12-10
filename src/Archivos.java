@@ -10,11 +10,11 @@ public void escribir (List<Empleado> empleado) {
 			try(BufferedWriter datos = new BufferedWriter (archivo)){
 				for (int i = 0; i < empleado.size(); i++) {
 					datos.write ("Empleado: " + empleado.get(i).getNombre() + " \n\t--- "
-							+ " Tipo de empleado: "	+ empleado.get(i).getTipoempl() + " \n--- "
+							+ " Tipo de empleado: "	+ empleado.get(i).getTipoempl() + " \n\t--- "
 							+ " Salario $ : " + String.format("%.2f", empleado.get(i).getSueldo()) + " \n\t--- "
 							+ " Descuento por Pension: $" + (empleado.get(i).getSueldo() * 0.04) + " \n\t--- "
-							+ " Descuento por Salud: $" + (empleado.get(i).getSueldo() * 0.04) + " \n--- "
-							+ " Comisiones Obtenidas: $"  + "\t" + empleado.get(i).getComision() + " \n--- "
+							+ " Descuento por Salud: $" + (empleado.get(i).getSueldo() * 0.04) + " \n\\t--- "
+							+ " Comisiones Obtenidas: $"  + "\t" + empleado.get(i).getComision() + " \n\t--- "
 							+ " Salario Neto (con Novedades): $" + String.format("%.2f",
 									(empleado.get(i).getSueldo() - empleado.get(i).getSueldo() * 0.08) + empleado.get(i).getComision() ) +"\n");
 				}
